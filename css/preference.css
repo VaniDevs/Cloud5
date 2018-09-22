@@ -13,25 +13,10 @@
     color: white;
 }
 
-.tickbox:checked:after {
-    background-color:blue;
-}
-
-
-.tickbox label {
-	font-family:Open Sans Italic;
-	font-size: 12px;
-	color: #666;
-	border-radius: 20px 20px 20px 20px;
-	background: #f0f0f0;
-	padding: 3px 10px;
-	text-align: left;
-}
-input[type=checkbox]:checked + label {
-	color: white;
-	background: #86b3c1;
-}
-
+input[type=checkbox]:checked + label.tickbox {
+	color: red;
+  }
+  
 
 .checkboxes label {
 	font-family:Open Sans Italic;
@@ -41,8 +26,4 @@ input[type=checkbox]:checked + label {
 	background: #f0f0f0;
 	padding: 3px 10px;
 	text-align: left;
-}
-input[type=checkbox]:checked + label {
-	color: white;
-	background: #86b3c1;
 }
