@@ -9,14 +9,14 @@
         <script src="../Controllers/scripts/firebaseConfig.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-        <script src="../Controllers/scripts/listResources.js"></script> 
         <script src="../Controllers/scripts/filter.js"></script>
+        <script src="../Controllers/scripts/listResources.js"></script> 
     </head>
-    <!--render() for now while I change some js logic-->
-    <body onload="render()">
+    
+    <body onload="updateServiceList()">
         
-        <div class="container-fluid" id = "div1">
-            <div class = "container-fluid" id = "div2">
+        <div class="container-fluid" id = "outerContainer">
+            <div class = "container-fluid" id = "contentContainer">
                 
             </div>
         </div>

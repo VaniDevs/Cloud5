@@ -1,20 +1,5 @@
 // onload pulls all data 
 
-function getServiceHashes() {
-var aServiceHash = [];
-   var ref = database.ref("service/");
-   ref.on('value', function(snapshot) {
-       if (snapshot.val()) {
-           // console.log(snapshot.val());
-           let aTempServiceHash = Object.keys(snapshot.val());
-           aTempServiceHash.forEach(function(sServiceHash) {
-               console.log(sServiceHash);
-               aServiceHash.push(sServiceHash);
-           });
-       }
-   });
-   return aServiceHash;
-}
 
 var category = [
     "Sports",
@@ -60,33 +45,33 @@ var postObject = {
 /**
  * GENERATE AND RENDER THE PANELS
  */
-function render() {
-    var parentDiv = document.getElementById("div1");
-    var divElement = document.getElementById("div2");
-    var buttonid = document.getElementById("generate");
+function render(categories) {
+    
+    var divElement = document.getElementById("contentContainer");
 
-    for(let i = 0; i < category.length; i++) {
-        divElement = renderCategory(divElement,i);
+    for(let i = 0; i < categories.length; i++) {
+        divElement = renderCategory(divElement,categories[i]);
     }
     
 }
 
-function renderCategory(divElement,count) {
+function renderCategory(divElement,category) {
+
     let panelDivContainer = document.createElement("div");
     let categoryTitle = document.createElement("h1");
-    var uniqueKey = "";
+    
     
     panelDivContainer.setAttribute("class", "container");
-    categoryTitle.setAttribute("id", category[count]);
-    categoryTitle.innerText = category[count];
+    categoryTitle.setAttribute("id", category);
+    categoryTitle.innerText = category;
 
     panelDivContainer.appendChild(categoryTitle);
 
-    for(let j = 0; j < resourceServices.length; j++){
-        uniqueKey = count + "" + j;
-        console.log(uniqueKey);
-        panelDivContainer.appendChild(renderServicePanel(j,uniqueKey));
-    }
+    // for(let j = 0; j < resourceServices.length; j++){
+    //     uniqueKey = count + "" + j;
+    //     console.log(uniqueKey);
+    //     panelDivContainer.appendChild(renderServicePanel(j,uniqueKey));
+    // }
 
     divElement.appendChild(panelDivContainer);
     return divElement;
@@ -134,19 +119,22 @@ function renderServicePanel(count, uniqueKey){
   * RENDERING THE SERVICE POSTING CONTENT
   * */
 
- function renderServicePost(){
-
-
+ function renderServicePost(service){
+    
  }
 
- function renderDescription(parentDiv, dataTitle, dataContent) {
+ function renderSingleContent(serviceEntryKey,dataTitle, dataContent) {
+
     let container = document.createElement("div");
     let title = document.createElement("h2");
     let content = document.createElement("p");
     title.innerHTML = dataTitle;
     content.innerHTML = dataContent;
-
     
+    container.appendChild(title);
+    container.appendChild(content);
+
+    return container;
 
  }
 
@@ -193,6 +181,10 @@ function renderServicePanel(count, uniqueKey){
     let temp = document.createElement("div");
     var websiteHeader = "<h2> Website </h2>";
     var websiteContent = "<p>" + postObject.website + "</p>";
+ }
+
+ function deleteAllPanel() {
+
  }
 
 
