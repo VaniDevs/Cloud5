@@ -20,7 +20,10 @@ function formSaveHandle() {
         "website": handleWebsite()
     });
 
+<<<<<<< HEAD
     handleServiceLinkOrg(hash);
+=======
+>>>>>>> develop
     handleServiceKeyWords(handleKeyWords(), hash);
     window.open('../../Views/admin.html');
 }

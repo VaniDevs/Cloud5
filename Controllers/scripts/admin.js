@@ -1,13 +1,30 @@
-//var user = firebase.auth().currentUser;
+var config = {
+    apiKey: "AIzaSyDEtiyF_qJXqoN0BPv0KaOQ7LmiteTMLe4",
+    authDomain: "vanhack-eb10a.firebaseapp.com",
+    databaseURL: "https://vanhack-eb10a.firebaseio.com",
+    projectId: "vanhack-eb10a",
+    storageBucket: "vanhack-eb10a.appspot.com",
+      messagingSenderId: "872464678078"
+};
 
-//if(user){
+firebase.initializeApp(config);
 
-//} else {
-    //document.write("Please login");
-//}
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        console.log("user 1");
+        console.log(user);
+    } else {
+        console.log("User not logged in");
+    }
+});
 
-import {getDataBaseConnection} from './firebaseConfig.js';
+var user = firebase.auth().currentUser;
 
-let database = getDataBaseConnection();
+//console.log(user.Userinfo.uid);
 
-console.log(database);
+if (user) {
+    console.log("user 2");
+    console.log(user);
+} else {
+  // No user is signed in.
+}
