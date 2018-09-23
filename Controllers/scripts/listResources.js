@@ -16,6 +16,25 @@ var aServiceHash = [];
    return aServiceHash;
 }
 
+// function getServiceKeyContent() {
+//     var aServiceList = [];
+//     var aServiceContent = [];
+//     var oService = {};
+    
+//     let ref = database.ref("service/");
+//     ref.on('value', function(snapshot) {
+//         if (snapshot.val()) {
+//             // console.log(snapshot.val());
+//             aServiceList = Object.keys(snapshot.val());
+//             aServiceContent = Object.values(snapshot.val());
+//             for (var i = 0; i < aServiceList.length; i++) {
+//                 oService[aServiceList[i]] = aServiceContent[i];
+//             }
+//         }
+//     });
+//     return oService;
+// }
+
 var category = [
     "Sports",
     "Food", 
@@ -68,8 +87,41 @@ function render() {
     for(let i = 0; i < category.length; i++) {
         divElement = renderCategory(divElement,i);
     }
+
+    // for (var key in oService) {
+    //     renderServicePanel(oService[key]);
+    // }
     
 }
+
+// function renderServicePanel(value) {
+//     $('#div2').append('<div class="panel-group">');
+//     $('#div2').append('<div class="panel panel-default">');
+//     $('#div2').append('<div class="panel-heading">');
+//     $('#div2').append('<h3 class="panel-title" style="font-size: 20px;">');
+//     $('#div2').append('<a class="" data-toggle="collapse" href="#" aria-expanded="true">' + value["organizationName"] + '</a>');
+//     $('#div2').append('</h3>');
+//     $('#div2').append('</div>');
+//     $('#div2').append('<div class="panel-collapse collapse in" aria-expanded="true">');
+//     $('#div2').append('<p>' + value['description'] + '</p>');
+//     $('#div2').append('</div>');
+//     $('#div2').append('</div>');
+//     $('#div2').append('</div>');
+//     $('#div2').append('');
+    
+    // <div class="panel-group">
+    //     <div class="panel panel-default">
+    //         <div class="panel-heading">
+    //             <h3 class="panel-title" style="font-size: 20px;">
+    //                 <a class="" data-toggle="collapse" href="#" aria-expanded="true">Resource 1</a>
+    //             </h3>
+    //         </div>
+    //         <div id="00collapse" class="panel-collapse collapse in" aria-expanded="true">
+    //             <p>getServiceContent</p>
+    //         </div>
+    //     </div>
+    // </div>
+// }
 
 function renderCategory(divElement,count) {
     let panelDivContainer = document.createElement("div");
