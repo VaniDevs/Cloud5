@@ -46,17 +46,19 @@ var postObject = {
  * GENERATE AND RENDER THE PANELS
  */
 function render(categories) {
-    console.log("Render: " + categories);
+    console.log(categories);
     
     var divElement = document.getElementById("contentContainer");
 
-    for(let i = 0; i < categories.length; i++) {
-        divElement = renderCategory(divElement,categories[i]);
-    }
+    categories.forEach(function(category) {
+        console.log(category);
+        divElement = renderCategory(divElement,category);
+    });
     
 }
 
 function renderCategory(divElement,category) {
+    console.log(category);
 
     let panelDivContainer = document.createElement("div");
     let categoryTitle = document.createElement("h1");
@@ -81,7 +83,6 @@ function renderCategory(divElement,category) {
 function renderServicePanel(count, uniqueKey){
 
     var collapseid = uniqueKey + "collapse";
-    var collapseContentId = uniqueKey + "collapsecontent";
 
     var panelGroup = document.createElement("div");
     var panelDefault = document.createElement("div");
@@ -103,6 +104,14 @@ function renderServicePanel(count, uniqueKey){
     panelCollapse.setAttribute("class", "panel-collapse collapse");
     panelCollapseContent.innerHTML = "getServiceContent";
 
+    panelGroup.setAttribute("class", "deleteClass");
+    panelDefault.setAttribute("class", "deleteClass");
+    panelHeading.setAttribute("class", "deleteClass");
+    panelTitle.setAttribute("class", "deleteClass");
+    panelAnchor.setAttribute("class", "deleteClass");
+    panelCollapse.setAttribute("class", "deleteClass");
+    panelCollapseContent.setAttribute("class","deleteClass");
+    
     panelAnchor.appendChild(panelText)
     panelTitle.appendChild(panelAnchor);
     panelHeading.appendChild(panelTitle);
@@ -135,6 +144,7 @@ function renderServicePanel(count, uniqueKey){
     container.appendChild(title);
     container.appendChild(content);
 
+    //returns to be appended
     return container;
 
  }
@@ -185,7 +195,7 @@ function renderServicePanel(count, uniqueKey){
  }
 
  function deleteAllPanel() {
-    console.log("delete");
+   $(".deleteClass").remove();
  }
 
 

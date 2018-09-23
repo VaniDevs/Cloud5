@@ -2,10 +2,11 @@ const database = firebase.database();
 
 function updateServiceList() {
     var aServiceList = search();
+    console.log(aServiceList);
     render(getKeyWords());
     deleteAllPanel();
     aServiceList.forEach(function(sService) {
-        //generateServicePanel(sService);
+        //console.log("Service ..." + sService);
     });
 }
 
@@ -61,18 +62,18 @@ function getServiceHashes() {
 
 function getKeyWords() {
     var keyWords = [];
-        var ref = database.ref("keyWords");
-        ref.on('value', function (snapshot) {
-            if(snapshot.val()) {
-                console.log(snapshot.val());
-                let aTempKeyWord = Object.keys(snapshot.val());
-                aTempKeyWord.forEach(function(aKeyWord) {
-                    console.log(aKeyWord);
-                    keyWords.push(aKeyWord);
-                })
-            }
-        });
-        return keyWords;
+    var ref = database.ref("keyWords/");
+    ref.on('value', function (snapshot) {
+        if(snapshot.val()) {
+            let aTempKeyWord = Object.keys(snapshot.val());
+            aTempKeyWord.forEach(function(aKeyWord) {
+                console.log("akeyWord: " + aKeyWord);
+                keyWords.push(aKeyWord);
+            });
+        }
+    });
+    console.log(keyWords);
+    return keyWords;
 
 }
 
