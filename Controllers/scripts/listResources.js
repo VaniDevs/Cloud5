@@ -3,60 +3,45 @@
  * GENERATE AND RENDER THE PANELS
  */
 
- var serviceKeys = [
-    ageFrom,
-    ageT0,
-    city,
-    description,
-    email,
-    gender,
-    image,
-    organizationname,
-    phonenumber,
-    streetAddress,
-    time,
-    title,
-    website
-]
+//  var serviceKeys = [
+//     ageFrom,
+//     ageT0,
+//     city,
+//     description,
+//     email,
+//     gender,
+//     image,
+//     organizationname,
+//     phonenumber,
+//     streetAddress,
+//     time,
+//     title,
+//     website
+// ]
 
-function render(categories) {
-    console.log(categories);
-    
+
+function render(services) {
+    console.log("render");
     var divElement = document.getElementById("contentContainer");
-
-    categories.forEach(function(category) {
-        console.log(category);
-        divElement = renderCategory(divElement,category);
-    });
-    
-}
-
-function renderCategory(divElement,category) {
-    console.log(category);
-
-    let panelDivContainer = document.createElement("div");
-    let categoryTitle = document.createElement("h1");
-    
+    var panelDivContainer = document.createElement("div");
     
     panelDivContainer.setAttribute("class", "container");
-    categoryTitle.setAttribute("id", category);
-    categoryTitle.innerText = category;
 
-    panelDivContainer.appendChild(categoryTitle);
+    services.forEach(function(service) {
+        console.log("each");
+        console.log(service);
+        panelDivContainer.appendChild(renderServicePanel(service));
+    });
+    
 
-    // for(let j = 0; j < resourceServices.length; j++){
-    //     uniqueKey = count + "" + j;
-    //     console.log(uniqueKey);
-    //     panelDivContainer.appendChild(renderServicePanel(j,uniqueKey));
-    // }
-
+    
     divElement.appendChild(panelDivContainer);
     return divElement;
 }
 
-function renderServicePanel(count, uniqueKey){
+function renderServicePanel(serviceid){
 
-    var collapseid = uniqueKey + "collapse";
+    var collapseid = serviceid;
     var panelTitle = postObject.organizationName + ": " + postObject.service;
     var panelGroup = document.createElement("div");
     var panelDefault = document.createElement("div");
@@ -108,7 +93,7 @@ function renderServicePanel(count, uniqueKey){
  }
 
  function renderSingleContent(serviceKeys, service) {
-    
+
     let container = document.createElement("div");
     let title = document.createElement("h2");
     let content = document.createElement("p");

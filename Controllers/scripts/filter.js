@@ -3,11 +3,9 @@ const database = firebase.database();
 function updateServiceList() {
     var aServiceList = search();
     console.log(aServiceList);
-    render(getKeyWords());
+    
     deleteAllPanel();
-    aServiceList.forEach(function(sService) {
-        //console.log("Service ..." + sService);
-    });
+    render(aServiceList);
 }
 
 function updateAgeFilter() {
