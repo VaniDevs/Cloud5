@@ -79,7 +79,7 @@ function search() {
         let ref = database.ref("keyWords/" + sTocken);
         ref.on('value', function(snapshot) {
             if (snapshot.val()) {
-                let tempServiceList = Object.keys(snapshot.val());
+                let tempServiceList = Object.values(snapshot.val());
                 tempServiceList.forEach(function(service) {
                     // console.log(service);
                     aServiceList.push(service);
