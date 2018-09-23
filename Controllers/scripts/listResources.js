@@ -134,46 +134,63 @@ function renderServicePanel(count, uniqueKey){
   * RENDERING THE SERVICE POSTING CONTENT
   * */
 
+ function renderServicePost(){
 
- function renderDescription(parentDiv, postObject) {
-    var descriptionHeader = "<h2> Description </h2>";
-    var descriptionContent = "<p>" + postObject.description + "</p>";
+
+ }
+
+ function renderDescription(parentDiv, dataTitle, dataContent) {
+    let container = document.createElement("div");
+    let title = document.createElement("h2");
+    let content = document.createElement("p");
+    title.innerHTML = dataTitle;
+    content.innerHTML = dataContent;
+
+    
+
  }
 
 
  function renderAddress(parentDiv, postObject) {
+    let temp = document.createElement("div");
     var addressHeader = "<h2> Address </h2>";
     var addressContent = "<p>" + postObject.streetAddress + "</p>";
  }
 
  function renderCity(parentDiv, postObject) {
+    let temp = document.createElement("div");
     var cityHeader = "<h2> City </h2>";
     var cityContent = "<p>" + postObject.city + "</p>";
  }
 
  function renderTargetAge(parentDiv, postObject) {
+    let temp = document.createElement("div");
     var targetAgeHeader = "<h2>Target Age Range </h2>";
     var targetAgeContent = "<p> From " + postObject.ageFrom + " to " +  postObject.ageTo + " years </p>";
  }
 
  function renderTargetGender(parentDiv, postObject) {
+    let temp = document.createElement("div");
     var targetGenderHeader = "<h2> Gender </h2>";
     var targetGenderContent = "<p>" + postObject.description + "</p>";
 
  }
 
  function renderContactEmail(parentDiv, postObject) {
+    let temp = document.createElement("div");
     var contactEmailHeader = "<h2> Email </h2>"
     var contactEmailContent = "<p>" + postObject.email + "</p>";
  }
 
  function renderContactNumber(parentDiv, postObject) {
+    let temp = document.createElement("div");
     var contactNumberHeader = "<h2> Phone </h2>";
     var contactNumberContent = "<h2>" + postObject.phoneNumber + "</h2>";
 
  }
 
  function renderWebsite(parentDiv, postObject) {
+    let temp = document.createElement("div");
     var websiteHeader = "<h2> Website </h2>";
     var websiteContent = "<p>" + postObject.website + "</p>";
  }
