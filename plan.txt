@@ -3,6 +3,7 @@
         "hash": {
             "email" : "something",
             "username": "something"
+            "organizationName": "weekendfuelbag"
             "serviceList": [
                 "hash", "hash1"
             ]
@@ -21,7 +22,8 @@
             "phoneNumber": "123213",
             "website": "fioasdjfos.com",
             "image": "image",
-            "streetAddress": "1000 st"
+            "streetAddress": "1000 st",
+            "organizationName": "weekendfuelbag"
         }
     ]
     "keyWords": [
