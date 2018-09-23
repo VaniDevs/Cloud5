@@ -1,0 +1,64 @@
+{
+    "user": [
+        "hash": {
+            "email" : "something",
+            "username": "something"
+            "serviceList": [
+                "hash", "hash1"
+            ]
+        }
+    ]
+    "service": [
+        "hash": {
+            "title": "something",
+            "description": "something",
+            "city": "vancouver",
+            "ageFrom": "0",
+            "ageTo": "100",
+            "gender": "0-3",
+            "time": DATE,
+            "email": "jsdiofj",
+            "phoneNumber": "123213",
+            "website": "fioasdjfos.com",
+            "image": "image",
+            "streetAddress": "1000 st"
+        }
+    ]
+    "keyWords": [
+        "word1": [
+            "hash", "hash1"
+        ],
+        "word2: [
+            "hash", "hash1"
+        ],
+        "word3: [
+            "hash", "hash1"
+        ]
+    ]
+}
+
+Landing page / Login - SHIV
+    - Individual button
+        - skip log in and open posting page
+    - Organization button
+        - log in with google
+        - After the log in, open the posting page
+
+
+Posting page - Individual - JASON
+    - Invisible ADD button
+    - be able to open each posting to view descriptions
+
+
+    - be able to filter ages, gender, city - EDMUND
+    - be able to search key words - EDMUND
+
+
+Admin page - Orgs - PRAB
+    - Only list of postings
+        - Once clicked, open the form with save button
+        - Delete button for each posting
+        - Delete all
+
+
+    - Add button and open the page with the forms - ALEX
