@@ -27,22 +27,24 @@ function render(services) {
     
     panelDivContainer.setAttribute("class", "container");
 
-    services.forEach(function(service) {
-        console.log("each");
-        console.log(service);
-        panelDivContainer.appendChild(renderServicePanel(service));
-    });
-    
+    console.log("forloop..");
+    console.log(services);
+    var temp = Object.keys(services);
+    console.log(temp);
 
+    for(var key in services) {
+        console.log(key);
+        panelDivContainer.appendChild(renderServicePanel(services[key]));
+    }
     
     divElement.appendChild(panelDivContainer);
     return divElement;
 }
 
-function renderServicePanel(serviceid){
-
-    var collapseid = serviceid;
-    var panelTitle = postObject.organizationName + ": " + postObject.service;
+function renderServicePanel(myservicekey){
+    console.log(myservicekey);
+    var collapseid = myservicekey;
+    //var panelTitle = postObject.organizationName + ": " + postObject.service;
     var panelGroup = document.createElement("div");
     var panelDefault = document.createElement("div");
     var panelHeading = document.createElement("div");

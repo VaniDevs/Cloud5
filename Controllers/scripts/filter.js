@@ -5,7 +5,9 @@ function updateServiceList() {
     console.log(aServiceList);
     
     deleteAllPanel();
-    render(aServiceList);
+    var aTemp = getServiceObject();
+    console.log(aTemp);
+    render(aTemp);
 }
 
 function updateAgeFilter() {
@@ -33,7 +35,7 @@ function search() {
             if (snapshot.val()) {
                 let tempServiceList = Object.keys(snapshot.val());
                 tempServiceList.forEach(function(service) {
-                    console.log(service);
+                    //console.log(service);
                     aServiceList.push(service);
                 });
             }
@@ -76,5 +78,25 @@ function getKeyWords() {
 }
 
     
-
+function getServiceObject() {
+    var aServiceList = [];
+    var aServiceContent = [];
+    var oService = {};
+    
+    let ref = database.ref("service/");
+    ref.on('value', function(snapshot) {
+        if (snapshot.val()) {
+            // console.log(snapshot.val());
+            aServiceList = Object.keys(snapshot.val());
+            aServiceContent = Object.values(snapshot.val());
+            console.log(snapshot.val());
+            for (var i = 0; i < aServiceList.length; i++) {
+                oService[aServiceList[i]] = aServiceContent[i];
+            }
+        }
+       
+    });
+    
+    return oService;
+}
 
