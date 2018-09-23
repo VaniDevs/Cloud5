@@ -20,27 +20,25 @@ var resource = {
     services : resourceServices
 }
 
-function setUser(user) {
-    // setters
-}
+var postObject = {
+    organizationName: "weekendfuelbag",
+    service: "randomservice",
+    description: "something",
+    city: "vancouver",
+    ageFrom: "0",
+    ageTo: "100",
+    gender: "0-3",
+    time: "DATE",
+    email: "jsdiofj",
+    phoneNumber: "123213",
+    website: "fioasdjfos.com",
+    image: "image",
+    streetAddress: "1000 st",
+    
+ }
 
-function getUserInformation() {
-    return userProfile;
-}
+ var panelTitle = postObject.organizationName + ": " + postObject.service;
 
-
-function calculatePreferenceScore(user){
-    // priority value?
-
-}
-
-function search(user) {
-
-}
-
-function getResouceServicesList(resource) {
-    return resource.services;
-} 
 
 
 /**
@@ -95,37 +93,16 @@ function generatePanel(count){
 }
 
 
-/**
- * LINK ACTION TO THE PAGE
- */
-
- var postObject = {
-    organizationName: "weekendfuelbag",
-    service: "randomservice",
-    description: "something",
-    city: "vancouver",
-    ageFrom: "0",
-    ageTo: "100",
-    gender: "0-3",
-    time: "DATE",
-    email: "jsdiofj",
-    phoneNumber: "123213",
-    website: "fioasdjfos.com",
-    image: "image",
-    streetAddress: "1000 st",
-    
- }
-
- var panelTitle = postObject.organizationName + ": " + postObject.service;
-
- function generateServicePost(parentDiv, postObject) {
-    renderDescription(parentDiv, postObject.description);
-    renderLocation(orgLocation);
- }
 
  /**
   * RENDERING THE SERVICE POSTING 
   * */
+
+
+ function generateServicePost(parentDiv, postObject) {
+    renderDescription(parentDiv, postObject.description);
+    
+ }
 
  function renderDescription(parentDiv, postObject) {
     var descriptionHeader = "<h2> Description </h2>";
