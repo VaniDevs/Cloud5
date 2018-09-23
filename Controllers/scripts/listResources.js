@@ -2,6 +2,23 @@
 /**
  * GENERATE AND RENDER THE PANELS
  */
+
+ var serviceKeys = [
+    ageFrom,
+    ageT0,
+    city,
+    description,
+    email,
+    gender,
+    image,
+    organizationname,
+    phonenumber,
+    streetAddress,
+    time,
+    title,
+    website
+]
+
 function render(categories) {
     console.log(categories);
     
@@ -90,8 +107,8 @@ function renderServicePanel(count, uniqueKey){
     
  }
 
- function renderSingleContent(serviceEntryKey,dataTitle, dataContent) {
-
+ function renderSingleContent(serviceKeys, service) {
+    
     let container = document.createElement("div");
     let title = document.createElement("h2");
     let content = document.createElement("p");
