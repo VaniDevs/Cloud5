@@ -1,4 +1,5 @@
 // onload pulls all data 
+const database = firebase.database();
 
 function getServiceHashes() {
 var aServiceHash = [];
@@ -113,6 +114,7 @@ function generateServicePanel(count, uniqueKey){
     panelCollapse.setAttribute("class", "panel-collapse collapse");
     panelCollapse.setAttribute("id", collapseid);
     panelCollapseContent.setAttribute("id", collapseContentId);
+    panelCollapseContent.innerHTML = "Test Content";
 
     panelAnchor.appendChild(panelText)
     panelTitle.appendChild(panelAnchor);
