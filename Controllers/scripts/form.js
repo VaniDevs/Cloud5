@@ -20,6 +20,10 @@ function formSaveHandle() {
         "website": handleWebsite()
     });
 
+<<<<<<< HEAD
+    handleServiceLinkOrg(hash);
+=======
+>>>>>>> develop
     handleServiceKeyWords(handleKeyWords(), hash);
     window.open('../../Views/admin.html');
 }
@@ -110,4 +114,9 @@ function handleServiceKeyWords(keywords, hash) {
         oTempParam[hash] = "TRUE";
         database.ref('keyWords/' + keyword).push(hash);
     });
+}
+
+function handleServiceLinkOrg(hash) {
+    var currentUserUid = firebase.auth().currentUser.uid;
+    database.ref('users/' + currentUserUid + '/serviceList/').push(hash);
 }
