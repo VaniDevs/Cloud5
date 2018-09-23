@@ -17,22 +17,22 @@ var aServiceHash = [];
 }
 
 // function getServiceKeyContent() {
-//     var aServiceList = [];
-//     var aServiceContent = [];
-//     var oService = {};
+    // var aServiceList = [];
+    // var aServiceContent = [];
+    // var oService = {};
     
-//     let ref = database.ref("service/");
-//     ref.on('value', function(snapshot) {
-//         if (snapshot.val()) {
-//             // console.log(snapshot.val());
-//             aServiceList = Object.keys(snapshot.val());
-//             aServiceContent = Object.values(snapshot.val());
-//             for (var i = 0; i < aServiceList.length; i++) {
-//                 oService[aServiceList[i]] = aServiceContent[i];
-//             }
-//         }
-//     });
-//     return oService;
+    // let ref = database.ref("service/");
+    // ref.on('value', function(snapshot) {
+    //     if (snapshot.val()) {
+    //         // console.log(snapshot.val());
+    //         aServiceList = Object.keys(snapshot.val());
+    //         aServiceContent = Object.values(snapshot.val());
+    //         for (var i = 0; i < aServiceList.length; i++) {
+    //             oService[aServiceList[i]] = aServiceContent[i];
+    //         }
+    //     }
+    // });
+    // return oService;
 // }
 
 var category = [

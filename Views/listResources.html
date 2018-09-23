@@ -11,6 +11,7 @@
         <script src="../Controllers/scripts/firebaseConfig.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="../Controllers/scripts/Utils.js"></script>
         <script type="text/javascript" src="../Controllers/scripts/listResources.js"></script> 
         <script src="../Controllers/scripts/filter.js"></script>
     </head>
@@ -62,7 +63,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-default" onclick="updateFilter()" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" onclick="updateFilter(); userInfoKPI()" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

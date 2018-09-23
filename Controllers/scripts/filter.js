@@ -8,6 +8,25 @@ function updateServiceList() {
     });
 }
 
+function userInfoKPI() {
+    let ageInput = $('#ageInput').val();
+    let cityInput = $('#cityInput').val();
+    let genderInput = $('input[name="genderInput"]:checked').val();
+
+    if (!ageInput && !cityInput && !genderInput) {
+        return;
+    }
+
+    let hash = generateHash(ageInput + cityInput + genderInput + getCurrentTime());
+
+    database.ref('KPI/' + hash).set({
+        "age": ageInput,
+        "city": cityInput,
+        "gender": genderInput,
+        "timestamp": getCurrentTime()
+    });
+}
+
 function updateFilter() {
     // deleteAllPanel();
 
