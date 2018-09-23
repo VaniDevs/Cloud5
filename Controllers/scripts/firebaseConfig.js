@@ -11,8 +11,9 @@ var config = {
 firebase.initializeApp(config);
 
 
-function testing(){
-  alert("ok");
-}
+var database = firebase.database();
+
+console.log(database);
+
 
 

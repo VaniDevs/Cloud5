@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Service Add Form</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../Resources/style/style.css" media="all">
+
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script src="../Controllers/scripts/firebaseConfig.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../Controllers/scripts/Utils.js"></script>
+<script type="text/javascript" src="../Controllers/scripts/form.js"></script>
+
+</head>
+<body id="main_body">
+	<div class="container">
+		<h1>New Service Form</h1>
+	</div>
+	<div id="form_container">
+
+		<div class="form-group">
+			<label for="titleInput">Title:</label>
+			<input type="text" class="form-control" id="titleInput" required>
+		</div>
+		<div class="form-group">
+			<label for="keyWordsInput">Key Words (separated by comma and space i.e. food, sports, shelter):</label>
+			<input type="text" class="form-control" id="keyWordsInput" required>
+		</div> 
+		<div class="form-group">
+			<label for="descriptionInput">Description:</label>
+			<textarea class="form-control" rows="5" id="descriptionInput" required></textarea>
+		</div> 
+		<div class="form-group">
+			<label for="stAddressInput">Street Address</label>
+			<input type="text" class="form-control" id="stAddressInput" required>
+		</div> 
+		<div class="form-group">
+			<label for="2ndAddressInput">Address Line 2</label>
+			<input type="text" class="form-control" id="2ndAddressInput" required>
+		</div>
+		<div class="form-group">
+			<label for="cityInput">City</label>
+			<input type="text" class="form-control" id="cityInput" required>
+		</div> 
+		<div class="form-group">
+			<label for="provinceInput">Province</label>
+			<input type="text" class="form-control" id="provinceInput" required>
+		</div> 
+		<div class="form-group">
+			<label for="postalInput">Postal Code</label>
+			<input type="text" class="form-control" id="postalInput" required>
+		</div> 
+		<div class="form-group">
+			<label for="countryInput">Country</label>
+			<input type="text" class="form-control" id="countryInput" value="Canada">
+		</div> 
+		<div class="form-group">
+			<label for="phoneNumberInput">Phone Number</label>
+			<input type="text" class="form-control" id="phoneNumberInput" required>
+		</div> 
+		<div class="form-group">
+			<label for="ageFromInput">Age From</label>
+			<input type="text" class="form-control" id="ageFromInput">
+		</div> 
+		<div class="form-group">
+			<label for="ageToInput">Age To</label>
+			<input type="text" class="form-control" id="ageToInput" required>
+		</div> 
+		<div class="form-group">
+			<label for="genderInput">Gender (Please choose one of male, female, and all)</label>
+			<input type="text" class="form-control" id="genderInput">
+		</div> 
+		<div class="form-group">
+			<label for="emailInput">Email</label>
+			<input type="text" class="form-control" id="emailInput" required>
+		</div> 
+		<div class="form-group">
+			<label for="websiteInput">Website</label>
+			<input type="text" class="form-control" id="websiteInput" required>
+		</div>
+		<div class="form-group">
+			<label for="orgNameInput">Organization Name</label>
+			<input type="text" class="form-control" id="orgNameInput" required>
+		</div>
+		<button type="button" class="btn" onclick="formSaveHandle()">Save</button>
+	</div>
+</body>
+</html>
