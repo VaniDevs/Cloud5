@@ -118,8 +118,8 @@ function generatePanel(count){
 
  var panelTitle = postObject.organizationName + ": " + postObject.service;
 
- function generateServicePost(div, postObject) {
-    renderDescription(serviceDescriptoin);
+ function generateServicePost(parentDiv, postObject) {
+    renderDescription(parentDiv, postObject.description);
     renderLocation(orgLocation);
  }
 
@@ -127,37 +127,47 @@ function generatePanel(count){
   * RENDERING THE SERVICE POSTING 
   * */
 
- function renderDescription(serviceDescriptoin) {
-    
-}
+ function renderDescription(parentDiv, postObject) {
+    var descriptionHeader = "<h2> Description </h2>";
+    var descriptionContent = "<p>" + postObject.description + "</p>";
+ }
 
 
- function renderAddress(orgLocation) {
+ function renderAddress(parentDiv, postObject) {
+    var addressHeader = "<h2> Address </h2>";
+    var addressContent = "<p>" + postObject.streetAddress + "</p>";
+ }
+
+ function renderCity(parentDiv, postObject) {
+    var cityHeader = "<h2> City </h2>";
+    var cityContent = "<p>" + postObject.city + "</p>";
+ }
+
+ function renderTargetAge(parentDiv, postObject) {
+    var targetAgeHeader = "<h2>Target Age Range </h2>";
+    var targetAgeContent = "<p> From " + postObject.ageFrom + " to " +  postObject.ageTo + " years </p>";
+ }
+
+ function renderTargetGender(parentDiv, postObject) {
+    var targetGenderHeader = "<h2> Gender </h2>";
+    var targetGenderContent = "<p>" + postObject.description + "</p>";
 
  }
 
- function renderCity() {
+ function renderContactEmail(parentDiv, postObject) {
+    var contactEmailHeader = "<h2> Email </h2>"
+    var contactEmailContent = "<p>" + postObject.email + "</p>";
+ }
+
+ function renderContactNumber(parentDiv, postObject) {
+    var contactNumberHeader = "<h2> Phone </h2>";
+    var contactNumberContent = "<h2>" + postObject.phoneNumber + "</h2>";
 
  }
 
- function renderTargetAge() {
-
- }
-
- function renderTargetGender() {
-
- }
-
- function renderContactEmail() {
-
- }
-
- function renderContactNumber() {
-
- }
-
- function renderWebsite() {
-
+ function renderWebsite(parentDiv, postObject) {
+    var websiteHeader = "<h2> Website </h2>";
+    var websiteContent = "<p>" + postObject.website + "</p>";
  }
 
 
