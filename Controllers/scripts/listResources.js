@@ -46,6 +46,7 @@ var postObject = {
  * GENERATE AND RENDER THE PANELS
  */
 function render(categories) {
+    console.log("Render: " + categories);
     
     var divElement = document.getElementById("contentContainer");
 
@@ -184,7 +185,7 @@ function renderServicePanel(count, uniqueKey){
  }
 
  function deleteAllPanel() {
-
+    console.log("delete");
  }
 
 

@@ -5,7 +5,7 @@ function updateServiceList() {
     render(getKeyWords());
     deleteAllPanel();
     aServiceList.forEach(function(sService) {
-        generateServicePanel(sService);
+        //generateServicePanel(sService);
     });
 }
 
