@@ -1,22 +1,26 @@
 var token;
 var user;
 
-function myfunction(){
+function login(){
 
 var provider = new firebase.auth.GoogleAuthProvider();
-firebase.auth().signInWithPopup(provider).then(function(result) {
-   token = result.credential.accessToken;
-   user = result.user;
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      token = result.credential.accessToken;
+      //user = result.userInfo;
 
-   sessionStorage.setItem('userToken', token);
+      var user = firebase.auth().currentUser;
 
-   window.location.href = "admin.html";
+      sessionStorage.setItem('user', user);
+
+      window.location.href = "admin.html";
  
-}).catch(function(error) {
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  var email = error.email;
-  var credential = error.credential;
-});
+    }).catch(function(error) {
+
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      var email = error.email;
+      var credential = error.credential;
+
+    });
 }
 
