@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../Resources/style/style.css">
-<link rel="stylesheet" href="./Resources/style/freelancer.min.css" rel="stylesheet">
-<link rel="stylesheet" href="..Resources/style/freelancer.css" rel="stylesheet">
+    <head>
 
-<body>
+        <title>W3.CSS Template</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Header -->
-<header class="w3-container w3-center fullWidth">
-    <div class="fullWidth centered">
-        <h1 class="w3-jumbo">Weekend Fuel Bag</h1>
-        <p class="w3-xlarge">VanHacks</p>
-        <button id="individualSignUpButton" class="w3-button w3-pale-blue w3-padding-large w3-round-large w3-margin-top">Individuals</button>
-        <button id="orgSignUpButton" class="w3-button w3-pale-blue w3-padding-large w3-round-large w3-margin-top ">Organizations</button>
-    </div>
-</header>
+         <!-- Firebase App is always required and must be first -->
+         <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+         <!-- Add additional services that you want to use -->
+         <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
 
-</body>
-<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="../Controllers/scripts/admin.js" type="module"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <script src="../Controllers/scripts/admin.js"></script>
 
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../Resources/style/style.css">
+ 
+    </head>
+
+   <body>
+        <!-- Header -->
+        <div class="w3-container">
+                <p class="w3-xlarge">Services</p>
+                <button id="addService" class="w3-button w3-black w3-padding-medium w3-small w3-margin-bottom">Add Service</button>
+        </div>
+
+        <div class="w3-container w3-center fullWidth">
+            <div class="fullWidth">
+
+                    <div class="w3-card">
+                            <p>w3-card</p> 
+                    </div>
+
+            </div>
+        </div>
+
+    </body>
 </html>
