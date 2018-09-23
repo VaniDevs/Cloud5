@@ -26,3 +26,7 @@ var provider = new firebase.auth.GoogleAuthProvider();
 
 var database = firebase.database();
 
+
+function openServiceList() {
+    window.open("../../Views/listResources.html", "_self");
+}
