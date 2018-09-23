@@ -48,13 +48,14 @@ function render() {
     var parentDiv = document.getElementById("div1");
     var divElement = document.getElementById("div2");
     var buttonid = document.getElementById("generate");
-
-    
+    var uniqueKey = "";
 
     for(let i = 0; i < category.length; i++) {
-        divElement = generatePanelHeader(divElement,i);
+        divElement = generateCategoryTitle(divElement,i);
         for(let j = 0; j < resourceServices.length; j++){
-            divElement.append(generatePanel(j));
+            uniqueKey = i + "" + j;
+            console.log(uniqueKey);
+            divElement.appendChild(generateServicePanel(j,uniqueKey));
         }
     }
 
@@ -62,40 +63,45 @@ function render() {
     
 }
 
-function generatePanelHeader(divElement,count) {
+function generateCategoryTitle(divElement,count) {
+    let panelGroup = document.createElement("div");
+    panelGroup.setAttribute("class", "panel-group");
 
     let tempDiv = document.createElement("h1");
     tempDiv.setAttribute("id", category[count]);
     tempDiv.innerText = category[count];
-    divElement.append(tempDiv);
+    panelGroup.appendChild(tempDiv);
+    divElement.appendChild(panelGroup);
     return divElement;
 }
 
-function generatePanel(count){
-    // create panel div container
-    // create panel
-    // create textl
+function generateServicePanel(count, uniqueKey){
 
+    var collapseid = uniqueKey;
     var panelContainer = document.createElement("div");
-    var panel = document.createElement("div");
+    var panelHeading = document.createElement("div");
+    var panel = document.createElement("h3");
+    var panelAnchor = document.createElement("a");
     var panelText = document.createTextNode(resourceServices[count]);
 
     panelContainer.setAttribute("class", "panel panel-default");
-    panel.setAttribute("class","panel-body");
+    panelHeading.setAttribute("class", "panel-heading");
+    panelAnchor.setAttribute("data-toggle", "collapse");
+    panelAnchor.setAttribute("href", "#" + collapseid);
+    panel.setAttribute("class","panel-title");
     panel.style.fontSize = '20px';
 
     panel.appendChild(panelText);
-    panelContainer.appendChild(panel);
+    panelHeading.appendChild(panel);
+    panelContainer.appendChild(panelHeading);
     
     
     return panelContainer;
 
 }
 
-
-
  /**
-  * RENDERING THE SERVICE POSTING 
+  * RENDERING THE SERVICE POSTING CONTENT
   * */
 
 
