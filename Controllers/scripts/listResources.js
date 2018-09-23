@@ -1,46 +1,3 @@
-// onload pulls all data 
-
-
-var category = [
-    "Sports",
-    "Food", 
-    "Scholarships",
-    "Clothes"
-]
-
-var resourceServices = [
-    "Resource 1",
-    "Resource 2",
-    "Resource 3"
-]
-
-
-
-var resource = {
-    orgName : "getResourceName",
-    services : resourceServices
-}
-
-var postObject = {
-    organizationName: "weekendfuelbag",
-    service: "randomservice",
-    description: "something",
-    city: "vancouver",
-    ageFrom: "0",
-    ageTo: "100",
-    gender: "0-3",
-    time: "DATE",
-    email: "jsdiofj",
-    phoneNumber: "123213",
-    website: "fioasdjfos.com",
-    image: "image",
-    streetAddress: "1000 st",
-    
- }
-
- var panelTitle = postObject.organizationName + ": " + postObject.service;
-
-
 
 /**
  * GENERATE AND RENDER THE PANELS
@@ -83,13 +40,13 @@ function renderCategory(divElement,category) {
 function renderServicePanel(count, uniqueKey){
 
     var collapseid = uniqueKey + "collapse";
-
+    var panelTitle = postObject.organizationName + ": " + postObject.service;
     var panelGroup = document.createElement("div");
     var panelDefault = document.createElement("div");
     var panelHeading = document.createElement("div");
     var panelTitle = document.createElement("h3");
     var panelAnchor = document.createElement("a");
-    var panelText = document.createTextNode(resourceServices[count]);
+    var panelText = document.createTextNode("orgname: " + "resource title");
     var panelCollapse = document.createElement("div");
     var panelCollapseContent = document.createElement("p");
 
@@ -129,7 +86,7 @@ function renderServicePanel(count, uniqueKey){
   * RENDERING THE SERVICE POSTING CONTENT
   * */
 
- function renderServicePost(service){
+ function renderServicePost(services){
     
  }
 
