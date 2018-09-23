@@ -68,8 +68,6 @@ function render() {
     for(let i = 0; i < category.length; i++) {
         divElement = renderCategory(divElement,i);
     }
-
-    parentDiv.removeChild(buttonid);
     
 }
 
