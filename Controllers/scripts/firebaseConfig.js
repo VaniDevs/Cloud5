@@ -7,4 +7,5 @@ var config = {
     storageBucket: "vanhack-eb10a.appspot.com",
       messagingSenderId: "872464678078"
 };
+
 firebase.initializeApp(config);
