@@ -1,5 +1,21 @@
 // onload pulls all data 
 
+function getServiceHashes() {
+var aServiceHash = [];
+   var ref = database.ref("service/");
+   ref.on('value', function(snapshot) {
+       if (snapshot.val()) {
+           // console.log(snapshot.val());
+           let aTempServiceHash = Object.keys(snapshot.val());
+           aTempServiceHash.forEach(function(sServiceHash) {
+               console.log(sServiceHash);
+               aServiceHash.push(sServiceHash);
+           });
+       }
+   });
+   return aServiceHash;
+}
+
 var category = [
     "Sports",
     "Food", 
@@ -77,23 +93,33 @@ function generateCategoryTitle(divElement,count) {
 
 function generateServicePanel(count, uniqueKey){
 
-    var collapseid = uniqueKey;
+    var collapseid = uniqueKey + "collapse";
+    var collapseContentId = uniqueKey + "collapsecontent";
+
     var panelContainer = document.createElement("div");
     var panelHeading = document.createElement("div");
-    var panel = document.createElement("h3");
+    var panelTitle = document.createElement("h3");
     var panelAnchor = document.createElement("a");
     var panelText = document.createTextNode(resourceServices[count]);
+    var panelCollapse = document.createElement("div");
+    var panelCollapseContent = document.createElement("div");
 
     panelContainer.setAttribute("class", "panel panel-default");
     panelHeading.setAttribute("class", "panel-heading");
+    panelTitle.setAttribute("class","panel-title");
+    panelTitle.style.fontSize = '20px';
     panelAnchor.setAttribute("data-toggle", "collapse");
     panelAnchor.setAttribute("href", "#" + collapseid);
-    panel.setAttribute("class","panel-title");
-    panel.style.fontSize = '20px';
+    panelCollapse.setAttribute("class", "panel-collapse collapse");
+    panelCollapse.setAttribute("id", collapseid);
+    panelCollapseContent.setAttribute("id", collapseContentId);
 
-    panel.appendChild(panelText);
-    panelHeading.appendChild(panel);
+    panelAnchor.appendChild(panelText)
+    panelTitle.appendChild(panelAnchor);
+    panelHeading.appendChild(panelTitle);
+    panelHeading.append(panelCollapseContent);
     panelContainer.appendChild(panelHeading);
+
     
     
     return panelContainer;
