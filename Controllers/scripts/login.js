@@ -5,12 +5,12 @@ function login(){
 
 var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
-      token = result.credential.accessToken;
+      //token = result.credential.accessToken;
       //user = result.userInfo;
+      //var user = firebase.auth().currentUser;
+      //sessionStorage.setItem('user', user);
 
-      var user = firebase.auth().currentUser;
 
-      sessionStorage.setItem('user', user);
 
       window.location.href = "admin.html";
  
@@ -23,4 +23,6 @@ var provider = new firebase.auth.GoogleAuthProvider();
 
     });
 }
+
+var database = firebase.database();
 
