@@ -17,8 +17,4 @@ function testing(){
   alert("ok");
 }
 
-export function getDataBaseConnection(){
-  return database;
-}
-
 
