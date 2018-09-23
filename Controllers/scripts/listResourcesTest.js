@@ -1,5 +1,4 @@
 // onload pulls all data 
-const database = firebase.database();
 
 function getServiceHashes() {
 var aServiceHash = [];
@@ -65,66 +64,71 @@ function render() {
     var parentDiv = document.getElementById("div1");
     var divElement = document.getElementById("div2");
     var buttonid = document.getElementById("generate");
-    var uniqueKey = "";
 
     for(let i = 0; i < category.length; i++) {
-        divElement = generateCategoryTitle(divElement,i);
-        for(let j = 0; j < resourceServices.length; j++){
-            uniqueKey = i + "" + j;
-            console.log(uniqueKey);
-            divElement.appendChild(generateServicePanel(j,uniqueKey));
-        }
+        divElement = renderCategory(divElement,i);
     }
 
     parentDiv.removeChild(buttonid);
     
 }
 
-function generateCategoryTitle(divElement,count) {
-    let panelGroup = document.createElement("div");
-    panelGroup.setAttribute("class", "panel-group");
+function renderCategory(divElement,count) {
+    let panelDivContainer = document.createElement("div");
+    let categoryTitle = document.createElement("h1");
+    var uniqueKey = "";
+    
+    panelDivContainer.setAttribute("class", "container");
+    categoryTitle.setAttribute("id", category[count]);
+    categoryTitle.innerText = category[count];
 
-    let tempDiv = document.createElement("h1");
-    tempDiv.setAttribute("id", category[count]);
-    tempDiv.innerText = category[count];
-    panelGroup.appendChild(tempDiv);
-    divElement.appendChild(panelGroup);
+    panelDivContainer.appendChild(categoryTitle);
+
+    for(let j = 0; j < resourceServices.length; j++){
+        uniqueKey = count + "" + j;
+        console.log(uniqueKey);
+        panelDivContainer.appendChild(renderServicePanel(j,uniqueKey));
+    }
+
+    divElement.appendChild(panelDivContainer);
     return divElement;
 }
 
-function generateServicePanel(count, uniqueKey){
+function renderServicePanel(count, uniqueKey){
 
     var collapseid = uniqueKey + "collapse";
     var collapseContentId = uniqueKey + "collapsecontent";
 
-    var panelContainer = document.createElement("div");
+    var panelGroup = document.createElement("div");
+    var panelDefault = document.createElement("div");
     var panelHeading = document.createElement("div");
     var panelTitle = document.createElement("h3");
     var panelAnchor = document.createElement("a");
     var panelText = document.createTextNode(resourceServices[count]);
     var panelCollapse = document.createElement("div");
-    var panelCollapseContent = document.createElement("div");
+    var panelCollapseContent = document.createElement("p");
 
-    panelContainer.setAttribute("class", "panel panel-default");
+    panelGroup.setAttribute("class", "panel-group");
+    panelDefault.setAttribute("class", "panel panel-default");
     panelHeading.setAttribute("class", "panel-heading");
     panelTitle.setAttribute("class","panel-title");
     panelTitle.style.fontSize = '20px';
     panelAnchor.setAttribute("data-toggle", "collapse");
     panelAnchor.setAttribute("href", "#" + collapseid);
-    panelCollapse.setAttribute("class", "panel-collapse collapse");
     panelCollapse.setAttribute("id", collapseid);
-    panelCollapseContent.setAttribute("id", collapseContentId);
-    panelCollapseContent.innerHTML = "Test Content";
+    panelCollapse.setAttribute("class", "panel-collapse collapse");
+    panelCollapseContent.innerHTML = "getServiceContent";
 
     panelAnchor.appendChild(panelText)
     panelTitle.appendChild(panelAnchor);
     panelHeading.appendChild(panelTitle);
-    panelHeading.append(panelCollapseContent);
-    panelContainer.appendChild(panelHeading);
+    panelHeading.append(panelCollapse);
+    panelCollapse.appendChild(panelCollapseContent);
+    panelDefault.appendChild(panelHeading);
+    panelGroup.appendChild(panelDefault)
 
     
-    
-    return panelContainer;
+    return panelGroup;
 
 }
 
@@ -132,11 +136,6 @@ function generateServicePanel(count, uniqueKey){
   * RENDERING THE SERVICE POSTING CONTENT
   * */
 
-
- function generateServicePost(parentDiv, postObject) {
-    renderDescription(parentDiv, postObject.description);
-    
- }
 
  function renderDescription(parentDiv, postObject) {
     var descriptionHeader = "<h2> Description </h2>";
