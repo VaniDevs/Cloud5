@@ -3,8 +3,6 @@ const database = firebase.database();
 function updateServiceList() {
     var aServiceList = search();
     console.log(aServiceList);
-    
-    deleteAllPanel();
     var aTemp = getServiceObject();
     console.log(aTemp);
     render(aTemp);
@@ -81,7 +79,7 @@ function getKeyWords() {
 function getServiceObject() {
     var aServiceList = [];
     var aServiceContent = [];
-    var oService = {};
+    var oService = {nothing:"nothing"};
     
     let ref = database.ref("service/");
     ref.on('value', function(snapshot) {

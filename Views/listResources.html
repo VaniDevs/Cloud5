@@ -13,8 +13,9 @@
         <script src="../Controllers/scripts/listResources.js"></script> 
     </head>
     
-    <body onload="updateServiceList()">
-        
+    <body>
+        <button type="button" id="generate" class="btn btn-primary" onclick="updateServiceList()">Generate Row</button>
+        <button type="button" id="deletepanels" class="btn btn-primary" onclick="deleteAllPanels()">Delete</button>
         <div class="container-fluid" id = "outerContainer">
             <div class = "container-fluid" id = "contentContainer">
                 
